@@ -50,6 +50,11 @@ function Navbar() {
               About us
             </a>
           </Link>
+          <Link href="/team">
+            <a className="nav-item nav-link" href="#">
+              Team
+            </a>
+          </Link>
 
           <Link href="/contact">
             <a className="nav-item nav-link" href="#">

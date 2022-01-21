@@ -1,0 +1,25 @@
+@import "mixins";
+@import "../styles/colors.module.scss";
+
+.team {
+  min-height: 100vh;
+}
+.diagonalSVG {
+  background: $green;
+  clip-path: polygon(0 0, 100% 0, 100% 40%, 0 100%);
+  padding: 40px 0px;
+  height: 100px;
+}
+.title {
+  text-align: center;
+  & h1 {
+    font-size: 70px;
+    margin-bottom: 0;
+  }
+  & p {
+    font-weight: 100;
+    color: $grey;
+    font-size: 15.5px;
+    margin-top: -10px;
+  }
+}
