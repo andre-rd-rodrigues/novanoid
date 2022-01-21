@@ -1,0 +1,51 @@
+@import "mixins";
+@import "../styles/colors.module.scss";
+
+.walks {
+  min-height: 100vh;
+}
+.jumbotron {
+  background: url("https://images.unsplash.com/photo-1544729812-46958d74295c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80")
+    no-repeat no-repeat fixed;
+  background-size: cover;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  & h1 {
+    color: white;
+    font-size: 70px;
+  }
+  & button {
+    @include novanoid(white, $green);
+  }
+}
+
+.infoSection {
+  margin: 100px 0;
+}
+.infoText {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+
+  & h3 {
+    font-size: 35px;
+  }
+  & p {
+    color: $grey;
+    margin-top: 15px;
+    max-width: 500px;
+    line-height: 30px;
+  }
+  & svg {
+    color: $green;
+    margin-right: 20px;
+    font-size: 28px;
+  }
+  & button {
+    @include novanoid(white, $green);
+    margin-top: 20px;
+  }
+}

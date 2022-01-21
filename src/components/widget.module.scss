@@ -1,0 +1,32 @@
+@import "../styles/colors.module.scss";
+
+.widgetSection {
+  padding: 0 40px;
+  margin: auto;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+}
+.widgetsRow {
+  padding: 30px 10px;
+  color: $dark;
+  & svg {
+    font-size: 30px;
+    color: #48cfae;
+  }
+}
+.widget {
+  display: flex;
+  margin: 20px 0;
+  & div {
+    margin-left: 20px;
+  }
+  & h2 {
+    font-size: 30px;
+  }
+  & p {
+    color: $grey;
+    font-weight: 100;
+    line-height: 30px;
+  }
+}
