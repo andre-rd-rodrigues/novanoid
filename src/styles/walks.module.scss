@@ -18,7 +18,7 @@
     font-size: 70px;
   }
   & button {
-    @include novanoid(white, $green);
+    @include novanoid-btn(white, $green);
   }
 }
 
@@ -45,7 +45,7 @@
     font-size: 28px;
   }
   & button {
-    @include novanoid(white, $green);
+    @include novanoid-btn(white, $green);
     margin-top: 20px;
   }
 }

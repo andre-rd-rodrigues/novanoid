@@ -1,3 +1,72 @@
+@import "../styles/colors.module.scss";
+@import "mixins";
+
 .aboutUs {
   min-height: 100vh;
+  & h2 {
+    font-size: 40px;
+  }
+  & p {
+    font-weight: 100;
+  }
+}
+
+.jumbotron {
+  background: linear-gradient(
+      to bottom,
+      rgba(40, 40, 41, 0.52),
+      rgba(36, 36, 35, 0.73)
+    ),
+    url("https://images.unsplash.com/photo-1518419530812-e4cc91c95162?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"),
+    no-repeat no-repeat fixed;
+  background-size: cover;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  & h1 {
+    color: white;
+    font-size: 70px;
+    transform: translateY(20px);
+  }
+}
+.mission {
+  background-color: $white-variant;
+  padding: 40px 10px;
+  min-height: 380px;
+  display: flex;
+
+  & div {
+    max-width: 1000px;
+    margin: auto;
+    & h2 {
+      text-align: center;
+    }
+    & svg {
+      font-size: 50px;
+      color: $green;
+      margin-bottom: 10px;
+    }
+  }
+}
+.story {
+  padding: 100px 0;
+  & h2 {
+    margin-bottom: 24px;
+  }
+  & svg {
+    color: $green;
+    font-size: 30px;
+    margin-right: 20px;
+  }
+  & p {
+    line-height: 30px;
+    font-weight: 100;
+  }
+  & button {
+    @include novanoid-btn(white, $green);
+    margin-top: 20px;
+    font-weight: bold;
+  }
 }
