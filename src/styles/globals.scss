@@ -8,7 +8,8 @@ body {
 }
 h1,
 h2,
-h3 {
+h3,
+h4 {
   font-family: "Yanone Kaffeesatz", sans-serif;
   font-weight: 400;
   margin-top: 0;
@@ -23,4 +24,8 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+.slick-slide {
+  min-height: 800px !important;
 }
