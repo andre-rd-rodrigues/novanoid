@@ -98,7 +98,7 @@ function team() {
               <div className={styles.teamBox} key={member.id}>
                 <span className={styles.diagonalSpan} />
                 <Image src={member.src} width={300} height={450} />
-                <div>
+                <div className={styles.teamText}>
                   <div className={styles.presentation}>
                     <h4>{member.name}</h4>
                     <p>{member.username}</p>
