@@ -58,7 +58,7 @@ function walks() {
       <div className={styles.walks}>
         <div className={styles.jumbotron}>
           <h1>Walk in nature</h1>
-          <button>Book walk</button>
+          <button>Book a walk</button>
         </div>
         <div className={`${styles.infoSection}`}>
           <div className="container">
@@ -75,7 +75,7 @@ function walks() {
                       <div>
                         <h3>{item.title}</h3>
                         <p>{item.description}</p>
-                        <button>LEARN MORE</button>
+                        <button>Learn more</button>
                       </div>
                     </div>
                     <div className="col-lg-6 col-sm-12 order-lg-2 order-sm-1">
@@ -104,7 +104,7 @@ function walks() {
                       <div>
                         <h3>{item.title}</h3>
                         <p>{item.description}</p>
-                        <button>LEARN MORE</button>
+                        <button>Learn more</button>
                       </div>
                     </div>
                   </>

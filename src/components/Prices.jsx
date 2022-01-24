@@ -40,7 +40,7 @@ function Prices() {
                   <p>{feature}</p>
                 ))}
               </div>
-              <button className={styles.pricesLearn}>LEARN MORE</button>
+              <button className={styles.pricesLearn}>Learn more</button>
             </div>
           ))}
         </div>
