@@ -24,28 +24,13 @@
   }
 }
 
-.verticalCircles {
-  position: absolute;
-  top: 120%;
-  right: 50%;
-  z-index: -1;
-  & .circle {
-    margin: auto;
-    margin-bottom: 50px;
-    height: 3px;
-    width: 3px;
-    background-color: $dark;
-    border-radius: 50%;
-  }
-}
-
 .teamSection {
   margin: 50px 0 0 0;
 }
 
 .teamBox {
   position: relative;
-  z-index: 100;
+  z-index: 1;
   overflow-x: hidden;
   cursor: pointer;
   max-width: 240px;
@@ -100,9 +85,11 @@
     -webkit-animation: slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
     animation: slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   }
+
   &:hover {
     transform: scale(1.05);
     max-height: 800px;
+
     & img {
       filter: grayscale(0%);
     }
@@ -115,7 +102,9 @@
     }
   }
 }
-
+.teamText {
+  background-color: white;
+}
 @-webkit-keyframes slide-top {
   0% {
     -webkit-transform: translateY(50px);
@@ -137,6 +126,21 @@
   }
 }
 
+.verticalCircles {
+  position: absolute;
+  top: 120%;
+  right: 50%;
+  z-index: -1;
+  & .circle {
+    z-index: -1;
+    margin: auto;
+    margin-bottom: 50px;
+    height: 3px;
+    width: 3px;
+    background-color: $dark;
+    border-radius: 50%;
+  }
+}
 .join {
   text-align: center;
   & h2 {
