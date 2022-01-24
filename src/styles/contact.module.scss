@@ -1,0 +1,55 @@
+@import "../styles/colors.module.scss";
+@import "mixins";
+
+.contactUs {
+  min-height: 85vh;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.63), rgba(0, 0, 0, 0)),
+    url("https://images.unsplash.com/photo-1530480751442-48d43f49f62f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1030&q=80")
+      no-repeat no-repeat;
+  background-size: cover;
+  & .title {
+    padding-top: 100px;
+    text-align: center;
+    color: white;
+    & h1 {
+      font-size: 70px;
+      margin-bottom: 0;
+    }
+    & p {
+      font-weight: 100;
+      font-size: 15.2px;
+      margin-top: -10px;
+    }
+  }
+  .formContainer {
+    margin: auto;
+    margin-top: 30px;
+    max-width: 600px;
+  }
+  & form {
+    font-family: Roboto, sans-serif;
+  }
+  & input,
+  textarea {
+    padding: 7px 13px;
+    font-weight: 100;
+    border-radius: 0;
+    border: none;
+    box-shadow: 2.8px 2.8px 2.2px rgba(0, 0, 0, 0.011),
+      6.7px 6.7px 5.3px rgba(0, 0, 0, 0.016),
+      12.5px 12.5px 10px rgba(0, 0, 0, 0.02),
+      22.3px 22.3px 17.9px rgba(0, 0, 0, 0.024),
+      41.8px 41.8px 33.4px rgba(0, 0, 0, 0.029),
+      100px 100px 80px rgba(0, 0, 0, 0.04);
+  }
+  & button {
+    margin-top: 30px;
+    @include novanoid-btn(white, $green);
+    box-shadow: 2.8px 2.8px 2.2px rgba(0, 0, 0, 0.011),
+      6.7px 6.7px 5.3px rgba(0, 0, 0, 0.016),
+      12.5px 12.5px 10px rgba(0, 0, 0, 0.02),
+      22.3px 22.3px 17.9px rgba(0, 0, 0, 0.024),
+      41.8px 41.8px 33.4px rgba(0, 0, 0, 0.029),
+      100px 100px 80px rgba(0, 0, 0, 0.04);
+  }
+}
