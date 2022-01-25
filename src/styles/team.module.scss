@@ -3,6 +3,9 @@
 
 .team {
   min-height: 100vh;
+  & h2 {
+    font-size: 50px;
+  }
 }
 .diagonalSVG {
   background: $green;
@@ -128,7 +131,7 @@
 
 .verticalCircles {
   position: absolute;
-  top: 123%;
+  top: 850px;
   right: 50%;
   z-index: -1;
   & .circle {
@@ -143,6 +146,8 @@
 }
 .join {
   text-align: center;
+  background-color: $white-variant;
+  padding: 60px 0;
   & h2 {
     font-size: 50px;
   }
@@ -151,6 +156,6 @@
   }
   & button {
     @include novanoid-btn(white, $green);
-    margin: 10px 0 60px 0;
+    margin-top: 10px;
   }
 }

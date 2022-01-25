@@ -24,12 +24,24 @@
 
 .infoSection {
   margin: 100px 0;
+  & span,
+  img {
+    box-shadow: 2.8px 2.8px 2.2px rgba(0, 0, 0, 0.011),
+      6.7px 6.7px 5.3px rgba(0, 0, 0, 0.016),
+      12.5px 12.5px 10px rgba(0, 0, 0, 0.02),
+      22.3px 22.3px 17.9px rgba(0, 0, 0, 0.024),
+      41.8px 41.8px 33.4px rgba(0, 0, 0, 0.029),
+      100px 100px 80px rgba(0, 0, 0, 0.04);
+  }
+
+  .row {
+    margin: 120px 0;
+  }
 }
 .infoText {
   margin-top: 20px;
   display: flex;
   justify-content: center;
-
   & h3 {
     font-size: 35px;
   }
@@ -47,5 +59,31 @@
   & button {
     @include novanoid-btn(white, $green);
     margin-top: 20px;
+  }
+}
+.lightBox {
+  z-index: 1;
+}
+
+.memoriesSection {
+  text-align: center;
+  & h2 {
+    font-size: 50px;
+    margin: 0 0 30px 0;
+  }
+  & svg {
+    margin: 120px 0 10px 0;
+    color: $green;
+    font-size: 45px;
+  }
+  & img {
+    cursor: pointer;
+    position: relative;
+    transition: 0.2s ease;
+    transform: scale(0.95);
+    box-shadow: none;
+    &:hover {
+      transform: scale(0.9);
+    }
   }
 }

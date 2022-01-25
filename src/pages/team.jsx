@@ -5,6 +5,7 @@ import { faBook, faTree } from "@fortawesome/fontawesome-free-solid";
 import Head from "next/head";
 import Image from "next/image";
 import Slider from "react-slick";
+import Gallery from "react-photo-gallery";
 
 function team() {
   const teamMembers = [
@@ -75,8 +76,8 @@ function team() {
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 1,
-    autoplaySpeed: 2000,
-    autoplay: false,
+    autoplaySpeed: 1600,
+    autoplay: true,
     responsive: [],
     centerMode: true
   };
@@ -84,7 +85,7 @@ function team() {
   return (
     <>
       <Head>
-        <title>Novanoid | Meet the team</title>
+        <title>Novawalks | Meet the team</title>
       </Head>
       <div className={styles.team}>
         <div className={styles.diagonalSVG}></div>
@@ -116,8 +117,8 @@ function team() {
         </div>
         <div className={styles.join}>
           <h2>Ready to join us?</h2>
-          <p>Book a walk and start your journey with Novanoid.</p>
-          <button>BOOK A WALK</button>
+          <p>Book a walk and start your journey with Novawalks.</p>
+          <button>Book a walk</button>
         </div>
       </div>
     </>

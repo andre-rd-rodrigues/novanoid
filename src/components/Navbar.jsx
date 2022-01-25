@@ -11,7 +11,7 @@ function Navbar() {
       <Link href="/">
         <a className="d-flex align-content-center">
           <Image
-            alt="Novanoid logo"
+            alt="Novawalks logo"
             src="http://demo.rommar.in.ua/novanoid/novanoid-1/img/logo-light.png"
             width={75}
             height={20}
