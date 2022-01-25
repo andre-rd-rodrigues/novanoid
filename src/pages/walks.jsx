@@ -1,41 +1,22 @@
+import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faBirthdayCake,
+  faHamburger,
+  faHeart,
   faLeaf,
   faUsers
 } from "@fortawesome/fontawesome-free-solid";
 import Head from "next/head";
 import Image from "next/image";
-import React from "react";
+import Gallery from "react-photo-gallery";
+import Lightbox from "react-image-lightbox";
+import { photos, content } from "../utils";
 import styles from "../styles/walks.module.scss";
+import Link from "next/link";
 
-function walks() {
-  const content = [
-    {
-      id: 1,
-      title: "Various trails",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit ad dicta animi, suscipit alias voluptas quam id itaque, iure voluptate impedit commodi? Aspernatur accusantium vero quos fugiat at corporis quo?",
-      src: "https://images.unsplash.com/photo-1498598457418-36ef20772bb9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
-      alt: "Book a walk from our trails"
-    },
-    {
-      id: 2,
-      title: "Company is nurture",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit ad dicta animi, suscipit alias voluptas quam id itaque, iure voluptate impedit commodi? Aspernatur accusantium vero quos fugiat at corporis quo?",
-      src: "https://images.unsplash.com/photo-1542037104857-ffbb0b9155fb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1054&q=80",
-      alt: "Walk with company, bring your family"
-    },
-    {
-      id: 3,
-      title: "Meals in nature",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit ad dicta animi, suscipit alias voluptas quam id itaque, iure voluptate impedit commodi? Aspernatur accusantium vero quos fugiat at corporis quo?",
-      src: "https://images.unsplash.com/photo-1596808488339-f530c34cb3b6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80",
-      alt: "Have a break, eating lunch in nature"
-    }
-  ];
+const walks = () => {
+  const [openedImage, setOpenedImage] = useState(false);
+  const [currentImage, setCurrentImage] = useState();
 
   const Icon = ({ title }) => {
     switch (title) {
@@ -46,76 +27,111 @@ function walks() {
         return <FontAwesomeIcon icon={faUsers} />;
 
       default:
-        return <FontAwesomeIcon icon={faBirthdayCake} />;
+        return <FontAwesomeIcon icon={faHamburger} />;
     }
+  };
+  const handlePhotoClick = (src) => {
+    setCurrentImage(photos.filter((photo) => photo.src === src)[0]);
+    return setOpenedImage(true);
   };
 
   return (
     <>
       <Head>
-        <title>Novanoid | Walks</title>
+        <title>Novawalks | Walks</title>
       </Head>
       <div className={styles.walks}>
         <div className={styles.jumbotron}>
-          <h1>Walk in nature</h1>
-          <button>Book a walk</button>
+          <h1>Walks in nature</h1>
+          <Link href="/contact">
+            <button>Book a walk</button>
+          </Link>
         </div>
         <div className={`${styles.infoSection}`}>
           <div className="container">
-            {content.map((item) => (
-              <div className="row mt-5">
-                {item.id === 2 ? (
-                  <>
-                    <div
-                      className={`${styles.infoText} col-lg-6 col-sm-12 order-lg-1 order-sm-2`}
-                    >
-                      <div>
-                        <Icon title={item.title} />
-                      </div>
-                      <div>
-                        <h3>{item.title}</h3>
-                        <p>{item.description}</p>
+            {content.map((item) =>
+              item.id === 2 ? (
+                <div className={`${styles.row} row`}>
+                  <div
+                    className={`${styles.infoText} col-lg-6 col-sm-12 order-lg-1 order-sm-2`}
+                  >
+                    <div>
+                      <Icon title={item.title} />
+                    </div>
+                    <div>
+                      <h3>{item.title}</h3>
+                      <p>{item.description}</p>
+                      <Link href="/contact">
                         <button>Learn more</button>
-                      </div>
+                      </Link>
                     </div>
-                    <div className="col-lg-6 col-sm-12 order-lg-2 order-sm-1">
-                      <Image
-                        src={item.src}
-                        width={550}
-                        height={400}
-                        alt={item.alt}
-                      />
+                  </div>
+                  <div className="col-lg-6 col-sm-12 order-lg-2 order-sm-1">
+                    <Image
+                      src={item.src}
+                      width={550}
+                      height={400}
+                      alt={item.alt}
+                    />
+                  </div>
+                </div>
+              ) : (
+                <div className="row">
+                  <div className="col-lg-6 col-sm-12 ">
+                    <Image
+                      src={item.src}
+                      width={550}
+                      height={400}
+                      alt={item.alt}
+                    />
+                  </div>
+                  <div className={`${styles.infoText} col-lg-6 col-sm-12 `}>
+                    <div>
+                      <Icon title={item.title} />
                     </div>
-                  </>
-                ) : (
-                  <>
-                    <div className="col-lg-6 col-sm-12 ">
-                      <Image
-                        src={item.src}
-                        width={550}
-                        height={400}
-                        alt={item.alt}
-                      />
-                    </div>
-                    <div className={`${styles.infoText} col-lg-6 col-sm-12 `}>
-                      <div>
-                        <Icon title={item.title} />
-                      </div>
-                      <div>
-                        <h3>{item.title}</h3>
-                        <p>{item.description}</p>
+                    <div>
+                      <h3>{item.title}</h3>
+                      <p>{item.description}</p>
+                      <Link href="/contact">
                         <button>Learn more</button>
-                      </div>
+                      </Link>
                     </div>
-                  </>
-                )}
-              </div>
-            ))}
+                  </div>
+                </div>
+              )
+            )}
+
+            <div className={styles.memoriesSection}>
+              <FontAwesomeIcon icon={faHeart} />
+              <h2>Our memories</h2>
+              <Gallery
+                photos={photos}
+                onClick={(e) => handlePhotoClick(e.target.src)}
+              />
+            </div>
           </div>
         </div>
       </div>
+      {openedImage && (
+        <Lightbox
+          mainSrc={currentImage.src}
+          nextSrc={photos[(currentImage.index + 1) % photos.length]}
+          prevSrc={
+            photos[(currentImage.index + photos.length - 1) % photos.length]
+          }
+          onCloseRequest={() => setOpenedImage(false)}
+          onMovePrevRequest={() =>
+            setCurrentImage(photos[currentImage.index - 1])
+          }
+          onMoveNextRequest={() =>
+            setCurrentImage(photos[currentImage.index + 1])
+          }
+          animationOnKeyInput
+          wrapperClassName={styles.lightBox}
+        />
+      )}
     </>
   );
-}
+};
 
 export default walks;

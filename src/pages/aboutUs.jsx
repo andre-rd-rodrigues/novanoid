@@ -10,7 +10,7 @@ function aboutUs() {
   return (
     <>
       <Head>
-        <title>Novanoid | About Us</title>
+        <title>Novawalks | About Us</title>
       </Head>
       <div className={styles.aboutUs}>
         <div className={styles.jumbotron}>

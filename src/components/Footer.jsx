@@ -16,7 +16,7 @@ function Footer() {
         <div className={`${styles.footerRow} row`}>
           <div className="col">
             <Image
-              alt="Novanoid logo"
+              alt="Novawalks logo"
               src="http://demo.rommar.in.ua/novanoid/novanoid-1/img/logo-light.png"
               width={78}
               height={23}
