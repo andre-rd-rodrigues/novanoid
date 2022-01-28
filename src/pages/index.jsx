@@ -1,9 +1,11 @@
+import { useEffect } from "react";
 import Head from "next/head";
 import Prices from "../components/Prices";
 import WidgetSection from "../components/WidgetSection";
 import { motion } from "framer-motion";
-import styles from "../styles/home.module.scss";
 import { childOpacityVariants, titleVariants } from "../effects/motionVariants";
+import styles from "../styles/home.module.scss";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -22,11 +24,17 @@ wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
         />
       </Head>
       <div className={styles.welcomePage}>
+        <Image
+          src="https://images.unsplash.com/photo-1500829243541-74b677fecc30?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2076&q=80"
+          layout="fill"
+          objectFit="cover"
+          objectPosition="center"
+        />
         <motion.div
           variants={titleVariants}
           initial="hidden"
           animate="visible"
-          className="text-center"
+          className="text-center p-"
         >
           <motion.h1 variants={childOpacityVariants}>NOVAWALKS</motion.h1>
           <motion.p variants={childOpacityVariants}>nature heals</motion.p>
