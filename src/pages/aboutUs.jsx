@@ -45,11 +45,11 @@ function aboutUs() {
               </motion.h2>
             </div>
             <motion.p variants={fluidChildrenVariants}>
-              We're a tourist animation company dedicated to the Walks, groups
-              and Trail Running, with the aim of creating relaxed moments deep
-              into the nature. The goal is for customers to feel Madeiran for a
-              few days and enjoy a wonderful vacation. In fact, we want to show
-              the real healing nature.
+              We're a tourist animation company dedicated to the walks, groups,
+              trail running, and food experiences with the aim of creating
+              relaxed moments deep into the nature. The goal is for customers to
+              feel calm, and in tuned for a few days and enjoy a wonderful
+              vacation. In fact, we want to show the real healing nature.
             </motion.p>
           </motion.div>
         </div>
@@ -78,23 +78,21 @@ function aboutUs() {
                 </motion.h2>
                 <motion.p variants={fluidChildrenVariants}>
                   The company was founded by Trail Running athlete and mountain
-                  guide Luís Fernandes, native of Madeira, who is a very
-                  experienced athlete in mountain races and a deep connoisseur
-                  of the trails of the Island.
+                  guide John Walton, who is a very experienced athlete in
+                  mountain races and a deep connoisseur of the trails of the
+                  location.
                 </motion.p>
                 <motion.p variants={fluidChildrenVariants}>
-                  In its sports curriculum, among other outstanding results, he
-                  has two victories in the main trail running event organized in
-                  Madeira (MIUT®), one in the distance of 85 km and another in
-                  the distance of 115 km.
+                  We are passionate about nature and we love sharing it with
+                  fellow travelers with a taste for adventure. Here you can
+                  learn a bit more about the background of our team, see our
+                  fleet of super-jeeps and super-trucks, read a bit about
+                  nature, geography, geology and history, find answers to a few
+                  common questions and check the terms and conditions. If you
+                  don’t find what you are looking for, please don’t hesitate to
+                  drop us an email and we will do our very best to help.
                 </motion.p>
-                <motion.p variants={fluidChildrenVariants}>
-                  Internationally, he has represented Portugal several times in
-                  World and European Championships of Trail Running and
-                  Skyrunning. He has participated in competitions in the
-                  Pyrenees and in the Alps. At the world’s premier trail running
-                  event (UTMB®) he did 170km in 22 hours and 49 minutes.
-                </motion.p>
+
                 <Link href="/team">
                   <motion.button
                     variants={fluidChildrenVariants}

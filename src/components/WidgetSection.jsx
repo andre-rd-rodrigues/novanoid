@@ -25,9 +25,10 @@ function WidgetSection() {
           <div>
             <h2>FOREST WALKS</h2>
             <p>
-              Nulla fringilla urna ac urna volutpat, quis congue massa
-              dignissim. Suspendisse quis orci id dolor vehicula porta quis in
-              dolor. Phasellus volutpat metus.
+              Explore nature and enjoy a wonderful vacation. Our services are
+              small group walks or private walks, we also have one week group
+              programs that include multi-level walks as well as island van
+              tours.
             </p>
           </div>
         </motion.div>
@@ -37,11 +38,13 @@ function WidgetSection() {
         >
           <FontAwesomeIcon icon={faLaptop} />
           <div>
-            <h2>REMOTE MEETINGS</h2>
+            <h2>VIRTUAL TOURS</h2>
             <p>
-              Ut magna diam, placerat ac diam et, ornare volutpat libero.
-              Curabitur erat nisl, sollicitudin sit amet rhoncus interdum,
-              adipiscing aliquet est.
+              Virtual Reality is mostly known among gamers, but VR headsets are
+              also a great tool for travelers who want to relax and immerse
+              themselves in nature, or for travelers who want to broaden their
+              world view by virtually stepping into places they can’t
+              logistically reach.
             </p>
           </div>
         </motion.div>
@@ -53,9 +56,10 @@ function WidgetSection() {
           <div>
             <h2>MINDFULNESS</h2>
             <p>
-              Phasellus eget massa quam. Cras mi purus, accumsan id pretium sed,
-              faucibus quis diam. Maecenas aliquet, lacus a porttitor porta,
-              sapien.
+              Mindful attention to nature may help people maximize their
+              experience, even when exposure is brief. That is, to the extent
+              that nature is inherently beneficial, being more aware of it may
+              boost subjective appreciation.
             </p>
           </div>
         </motion.div>

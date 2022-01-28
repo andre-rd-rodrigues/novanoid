@@ -5,13 +5,11 @@ import { faAppleAlt } from "@fortawesome/free-solid-svg-icons";
 import Head from "next/head";
 import Image from "next/image";
 import Gallery from "react-photo-gallery";
-import Lightbox from "react-image-lightbox";
 import { photos, content } from "../utils";
 import styles from "../styles/walks.module.scss";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import {
-  childOpacityVariants,
   fluidChildrenVariants,
   fluidEnteringVariants,
   titleVariants
