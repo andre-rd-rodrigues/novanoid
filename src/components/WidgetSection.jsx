@@ -2,12 +2,25 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLeaf, faLaptop, faEye } from "@fortawesome/fontawesome-free-solid";
 import styles from "./widget.module.scss";
+import { motion } from "framer-motion";
+import {
+  fluidChildrenVariants,
+  fluidEnteringVariants
+} from "../effects/motionVariants";
 
 function WidgetSection() {
   return (
     <div className={`${styles.widgetSection} container`}>
-      <div className={`${styles.widgetsRow} row`}>
-        <div className={`${styles.widget} col-lg-4 col-sm-12`}>
+      <motion.div
+        variants={fluidEnteringVariants}
+        initial="hidden"
+        whileInView="visible"
+        className={`${styles.widgetsRow} row`}
+      >
+        <motion.div
+          variants={fluidChildrenVariants}
+          className={`${styles.widget} col-lg-4 col-sm-12`}
+        >
           <FontAwesomeIcon icon={faLeaf} />
           <div>
             <h2>FOREST WALKS</h2>
@@ -17,8 +30,11 @@ function WidgetSection() {
               dolor. Phasellus volutpat metus.
             </p>
           </div>
-        </div>
-        <div className={`${styles.widget} col-lg-4 col-sm-12`}>
+        </motion.div>
+        <motion.div
+          variants={fluidChildrenVariants}
+          className={`${styles.widget} col-lg-4 col-sm-12`}
+        >
           <FontAwesomeIcon icon={faLaptop} />
           <div>
             <h2>REMOTE MEETINGS</h2>
@@ -28,8 +44,11 @@ function WidgetSection() {
               adipiscing aliquet est.
             </p>
           </div>
-        </div>
-        <div className={`${styles.widget} col-lg-4 col-sm-12`}>
+        </motion.div>
+        <motion.div
+          variants={fluidChildrenVariants}
+          className={`${styles.widget} col-lg-4 col-sm-12`}
+        >
           <FontAwesomeIcon icon={faEye} />
           <div>
             <h2>MINDFULNESS</h2>
@@ -39,8 +58,8 @@ function WidgetSection() {
               sapien.
             </p>
           </div>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </div>
   );
 }

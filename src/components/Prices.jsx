@@ -1,5 +1,11 @@
+import { motion } from "framer-motion";
 import Link from "next/link";
 import React from "react";
+import {
+  fluidChildrenVariants,
+  fluidEnteringVariants,
+  hoverVariant
+} from "../effects/motionVariants";
 import styles from "./prices.module.scss";
 
 function Prices() {
@@ -28,10 +34,19 @@ function Prices() {
       <h2>OUR PRICING</h2>
       <p>Discover, taste, and feel the outdoor adventures</p>
       <div className={`${styles.container}container`}>
-        <div className={`${styles.priceRow} row`}>
+        <motion.div
+          variants={fluidEnteringVariants}
+          initial="hidden"
+          whileInView="visible"
+          className={`${styles.priceRow} row`}
+        >
           {prices.map((item) => (
             <Link href="/contact">
-              <div className={`${styles.priceCol}`}>
+              <motion.div
+                variants={fluidChildrenVariants}
+                whileHover={hoverVariant}
+                className={`${styles.priceCol}`}
+              >
                 <h4>{item.name}</h4>
                 <h3>
                   <span>$</span>
@@ -43,10 +58,10 @@ function Prices() {
                   ))}
                 </div>
                 <button className={styles.pricesLearn}>Learn more</button>
-              </div>
+              </motion.div>
             </Link>
           ))}
-        </div>
+        </motion.div>
       </div>
     </div>
   );

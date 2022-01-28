@@ -3,6 +3,7 @@ import Prices from "../components/Prices";
 import WidgetSection from "../components/WidgetSection";
 import { motion } from "framer-motion";
 import styles from "../styles/home.module.scss";
+import { childOpacityVariants, titleVariants } from "../effects/motionVariants";
 
 export default function Home() {
   return (
@@ -21,8 +22,15 @@ wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
         />
       </Head>
       <div className={styles.welcomePage}>
-        <h1>NOVAWALKS</h1>
-        <p>nature heals</p>
+        <motion.div
+          variants={titleVariants}
+          initial="hidden"
+          animate="visible"
+          className="text-center"
+        >
+          <motion.h1 variants={childOpacityVariants}>NOVAWALKS</motion.h1>
+          <motion.p variants={childOpacityVariants}>nature heals</motion.p>
+        </motion.div>
       </div>
       <WidgetSection />
       <Prices />

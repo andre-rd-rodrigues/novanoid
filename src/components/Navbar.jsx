@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/fontawesome-free-solid";
+import { motion } from "framer-motion";
 
 function Navbar() {
   const collapseAfterClick = () => {
@@ -23,8 +24,17 @@ function Navbar() {
   useEffect(() => {
     collapseAfterClick();
   }, []);
+
   return (
-    <nav className={`${styles.navbar} navbar navbar-expand-sm fixed-top `}>
+    <motion.nav
+      className={`${styles.navbar} navbar navbar-expand-sm fixed-top `}
+      initial={{ y: -200 }}
+      animate={{ y: 0 }}
+      transition={{
+        type: "spring",
+        duration: 0.7
+      }}
+    >
       <Link href="/">
         <a className="d-flex align-content-center nav-item">
           <Image
@@ -73,7 +83,7 @@ function Navbar() {
           </Link>
         </div>
       </div>
-    </nav>
+    </motion.nav>
   );
 }
 

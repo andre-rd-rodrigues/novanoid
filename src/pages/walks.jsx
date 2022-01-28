@@ -9,6 +9,13 @@ import Lightbox from "react-image-lightbox";
 import { photos, content } from "../utils";
 import styles from "../styles/walks.module.scss";
 import Link from "next/link";
+import { motion } from "framer-motion";
+import {
+  childOpacityVariants,
+  fluidChildrenVariants,
+  fluidEnteringVariants,
+  titleVariants
+} from "../effects/motionVariants";
 
 const walks = () => {
   const [openedImage, setOpenedImage] = useState(false);
@@ -41,18 +48,31 @@ const walks = () => {
       </Head>
       <div className={styles.walks}>
         <div className={styles.jumbotron}>
-          <h1>Walks in nature</h1>
-          <Link href="/contact">
-            <button>Book a walk</button>
-          </Link>
+          <motion.div
+            variants={titleVariants}
+            initial="hidden"
+            whileInView="visible"
+            className="text-center"
+          >
+            <h1>Walks in nature</h1>
+            <Link href="/contact">
+              <button>Book a walk</button>
+            </Link>
+          </motion.div>
         </div>
         <div className={`${styles.infoSection}`}>
           <div className="container px-4">
             {content.map((item) =>
               item.id === 2 ? (
-                <div className={`${styles.row} row`}>
+                <motion.div
+                  variants={fluidEnteringVariants}
+                  initial="hidden"
+                  whileInView="visible"
+                  className={`${styles.row} row`}
+                >
                   {/*  Text */}
-                  <div
+                  <motion.div
+                    variants={fluidChildrenVariants}
                     className={`${styles.infoText} col-lg-6 col-sm-12 order-lg-1 order-sm-2 order-2`}
                   >
                     <div>
@@ -66,28 +86,42 @@ const walks = () => {
                         <button>Learn more</button>
                       </Link>
                     </div>
-                  </div>
+                  </motion.div>
                   {/*  Image*/}
-                  <div className="col-lg-6 col-sm-12 order-lg-2 order-sm-1 order-1 text-center">
+                  <motion.div
+                    variants={fluidChildrenVariants}
+                    className="col-lg-6 col-sm-12 order-lg-2 order-sm-1 order-1 text-center"
+                  >
                     <Image
                       src={item.src}
                       width={550}
                       height={400}
                       alt={item.alt}
                     />
-                  </div>
-                </div>
+                  </motion.div>
+                </motion.div>
               ) : (
-                <div className="row">
-                  <div className="col-lg-6 col-sm-12 text-center">
+                <motion.div
+                  variants={fluidEnteringVariants}
+                  initial="hidden"
+                  whileInView="visible"
+                  className="row"
+                >
+                  <motion.div
+                    variants={fluidChildrenVariants}
+                    className="col-lg-6 col-sm-12 text-center"
+                  >
                     <Image
                       src={item.src}
                       width={550}
                       height={400}
                       alt={item.alt}
                     />
-                  </div>
-                  <div className={`${styles.infoText} col-lg-6 col-sm-12 `}>
+                  </motion.div>
+                  <motion.div
+                    variants={fluidChildrenVariants}
+                    className={`${styles.infoText} col-lg-6 col-sm-12 `}
+                  >
                     <div>
                       <Icon title={item.title} />
                     </div>
@@ -98,24 +132,32 @@ const walks = () => {
                         <button>Learn more</button>
                       </Link>
                     </div>
-                  </div>
-                </div>
+                  </motion.div>
+                </motion.div>
               )
             )}
 
-            <div className={styles.memoriesSection}>
+            <motion.div
+              variants={titleVariants}
+              initial="hidden"
+              whileInView="visible"
+              className={styles.memoriesSection}
+            >
               <FontAwesomeIcon icon={faHeart} />
               <h2>Our memories</h2>
               <Gallery
                 photos={photos}
                 onClick={(e) => handlePhotoClick(e.target.src)}
               />
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>
       {openedImage && (
-        <Lightbox
+        <motion.Lightbox
+          variants={titleVariants}
+          initial="hidden"
+          whileInView="visible"
           mainSrc={currentImage.src}
           nextSrc={photos[(currentImage.index + 1) % photos.length]}
           prevSrc={

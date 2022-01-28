@@ -7,6 +7,14 @@ import Image from "next/image";
 import Slider from "react-slick";
 import Gallery from "react-photo-gallery";
 import Link from "next/link";
+import { motion } from "framer-motion";
+import {
+  fluidChildrenVariants,
+  fluidEnteringVariants,
+  titleVariants,
+  childOpacityVariants,
+  hoverVariant
+} from "../effects/motionVariants";
 
 function team() {
   const teamMembers = [
@@ -117,14 +125,30 @@ function team() {
       </Head>
       <div className={styles.team}>
         <div className={styles.diagonalSVG}></div>
-        <div className={styles.title}>
+        <motion.div
+          variants={titleVariants}
+          initial="hidden"
+          animate="visible"
+          className={styles.title}
+        >
           <h1>Meet the team</h1>
-          <p>Responsible for creating amazing memories</p>
-        </div>
-        <div className={styles.teamSection}>
+          <motion.p variants={childOpacityVariants}>
+            Responsible for creating amazing memories
+          </motion.p>
+        </motion.div>
+        <motion.div
+          variants={fluidEnteringVariants}
+          initial="hidden"
+          whileInView="visible"
+          className={styles.teamSection}
+        >
           <Slider {...settings}>
             {teamMembers.map((member) => (
-              <div className={styles.teamBox} key={member.id}>
+              <motion.div
+                variants={fluidChildrenVariants}
+                className={styles.teamBox}
+                key={member.id}
+              >
                 <span className={styles.diagonalSpan} />
                 <Image src={member.src} width={300} height={450} />
                 <div className={styles.teamText}>
@@ -136,20 +160,34 @@ function team() {
                     <p>{member.description}</p>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </Slider>
-        </div>
+        </motion.div>
         <div className={styles.verticalCircles}>
           <VerticalCircles />
         </div>
-        <div className={`${styles.join} px-4`}>
-          <h2>Ready to join us?</h2>
-          <p>Book a walk and start your journey with Novawalks.</p>
+        <motion.div
+          variants={fluidEnteringVariants}
+          initial="hidden"
+          whileInView="visible"
+          className={`${styles.join} px-4`}
+        >
+          <motion.h2 variants={fluidChildrenVariants}>
+            Rea dy to join us?
+          </motion.h2>
+          <motion.p variants={fluidChildrenVariants}>
+            Book a walk and start your journey with Novawalks.
+          </motion.p>
           <Link href="/contact">
-            <button>Book a walk</button>
+            <motion.button
+              variants={fluidChildrenVariants}
+              whileHover={hoverVariant}
+            >
+              Book a walk
+            </motion.button>
           </Link>
-        </div>
+        </motion.div>
       </div>
     </>
   );
