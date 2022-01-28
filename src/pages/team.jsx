@@ -174,7 +174,7 @@ function team() {
           className={`${styles.join} px-4`}
         >
           <motion.h2 variants={fluidChildrenVariants}>
-            Rea dy to join us?
+            Ready to join us?
           </motion.h2>
           <motion.p variants={fluidChildrenVariants}>
             Book a walk and start your journey with Novawalks.
