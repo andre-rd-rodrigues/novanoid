@@ -69,3 +69,15 @@
     margin-top: 20px;
   }
 }
+
+@media screen and(max-width:576px) {
+  .story {
+    & h2 {
+      margin-top: 30px;
+    }
+    & button {
+      width: 100%;
+      padding: 10px;
+    }
+  }
+}

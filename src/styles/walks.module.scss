@@ -87,3 +87,22 @@
     }
   }
 }
+
+//Mobile
+@media screen and (max-width: 576px) {
+  .infoText {
+    margin-top: 40px;
+    & svg {
+      display: none;
+    }
+    & button {
+      width: 100%;
+      padding: 10px;
+    }
+  }
+
+  .row {
+    margin: 80px 0 !important;
+    --bs-gutter-x: 0;
+  }
+}

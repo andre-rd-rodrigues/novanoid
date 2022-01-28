@@ -26,7 +26,7 @@ function contact() {
         <div className={styles.formContainer}>
           <form onSubmit={(e) => handleSubmit(e)}>
             <div className="row">
-              <div className="col">
+              <div className="col-lg-6 col-md-6 col-sm-12 mt-4">
                 <input
                   type="text"
                   className="form-control"
@@ -34,7 +34,7 @@ function contact() {
                   required
                 />
               </div>
-              <div className="col">
+              <div className="col-lg-6 col-md-6 col-sm-12 mt-4">
                 <input
                   type="email"
                   className="form-control"

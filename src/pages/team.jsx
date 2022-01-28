@@ -6,6 +6,7 @@ import Head from "next/head";
 import Image from "next/image";
 import Slider from "react-slick";
 import Gallery from "react-photo-gallery";
+import Link from "next/link";
 
 function team() {
   const teamMembers = [
@@ -74,11 +75,38 @@ function team() {
     dots: false,
     infinite: true,
     speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 1,
     autoplaySpeed: 1600,
     autoplay: true,
-    responsive: [],
+    responsive: [
+      {
+        breakpoint: 3000,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 4
+        }
+      },
+      {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3
+        }
+      },
+      {
+        breakpoint: 890,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2
+        }
+      },
+      {
+        breakpoint: 620,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ],
     centerMode: true
   };
 
@@ -115,10 +143,12 @@ function team() {
         <div className={styles.verticalCircles}>
           <VerticalCircles />
         </div>
-        <div className={styles.join}>
+        <div className={`${styles.join} px-4`}>
           <h2>Ready to join us?</h2>
           <p>Book a walk and start your journey with Novawalks.</p>
-          <button>Book a walk</button>
+          <Link href="/contact">
+            <button>Book a walk</button>
+          </Link>
         </div>
       </div>
     </>

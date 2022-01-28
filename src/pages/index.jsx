@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Prices from "../components/Prices";
 import WidgetSection from "../components/WidgetSection";
+import { motion } from "framer-motion";
 import styles from "../styles/home.module.scss";
 
 export default function Home() {

@@ -16,7 +16,7 @@ function aboutUs() {
         <div className={styles.jumbotron}>
           <h1>About Us</h1>
         </div>
-        <div className={styles.mission}>
+        <div className={`${styles.mission} px-4`}>
           <div>
             <div className="text-center mb-4">
               <FontAwesomeIcon icon={faTree} size="x5" />
@@ -32,7 +32,7 @@ function aboutUs() {
           </div>
         </div>
         <div className={styles.story}>
-          <div className="container">
+          <div className="container px-4">
             <div className="row">
               <div className="col-lg-6 col-sm-12 text-center">
                 <Image

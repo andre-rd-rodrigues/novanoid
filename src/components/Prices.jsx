@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 import styles from "./prices.module.scss";
 
@@ -29,19 +30,21 @@ function Prices() {
       <div className={`${styles.container}container`}>
         <div className={`${styles.priceRow} row`}>
           {prices.map((item) => (
-            <div className={`${styles.priceCol}`}>
-              <h4>{item.name}</h4>
-              <h3>
-                <span>$</span>
-                {item.price}
-              </h3>
-              <div>
-                {item.description.map((feature) => (
-                  <p>{feature}</p>
-                ))}
+            <Link href="/contact">
+              <div className={`${styles.priceCol}`}>
+                <h4>{item.name}</h4>
+                <h3>
+                  <span>$</span>
+                  {item.price}
+                </h3>
+                <div>
+                  {item.description.map((feature) => (
+                    <p>{feature}</p>
+                  ))}
+                </div>
+                <button className={styles.pricesLearn}>Learn more</button>
               </div>
-              <button className={styles.pricesLearn}>Learn more</button>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

@@ -1,11 +1,7 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faHamburger,
-  faHeart,
-  faLeaf,
-  faUsers
-} from "@fortawesome/fontawesome-free-solid";
+import { faHeart, faLeaf, faUsers } from "@fortawesome/fontawesome-free-solid";
+import { faAppleAlt } from "@fortawesome/free-solid-svg-icons";
 import Head from "next/head";
 import Image from "next/image";
 import Gallery from "react-photo-gallery";
@@ -18,6 +14,7 @@ const walks = () => {
   const [openedImage, setOpenedImage] = useState(false);
   const [currentImage, setCurrentImage] = useState();
 
+  //Component
   const Icon = ({ title }) => {
     switch (title) {
       case "Various trails":
@@ -27,9 +24,11 @@ const walks = () => {
         return <FontAwesomeIcon icon={faUsers} />;
 
       default:
-        return <FontAwesomeIcon icon={faHamburger} />;
+        return <FontAwesomeIcon icon={faAppleAlt} />;
     }
   };
+
+  //Click photo
   const handlePhotoClick = (src) => {
     setCurrentImage(photos.filter((photo) => photo.src === src)[0]);
     return setOpenedImage(true);
@@ -48,12 +47,13 @@ const walks = () => {
           </Link>
         </div>
         <div className={`${styles.infoSection}`}>
-          <div className="container">
+          <div className="container px-4">
             {content.map((item) =>
               item.id === 2 ? (
                 <div className={`${styles.row} row`}>
+                  {/*  Text */}
                   <div
-                    className={`${styles.infoText} col-lg-6 col-sm-12 order-lg-1 order-sm-2`}
+                    className={`${styles.infoText} col-lg-6 col-sm-12 order-lg-1 order-sm-2 order-2`}
                   >
                     <div>
                       <Icon title={item.title} />
@@ -61,12 +61,14 @@ const walks = () => {
                     <div>
                       <h3>{item.title}</h3>
                       <p>{item.description}</p>
+
                       <Link href="/contact">
                         <button>Learn more</button>
                       </Link>
                     </div>
                   </div>
-                  <div className="col-lg-6 col-sm-12 order-lg-2 order-sm-1">
+                  {/*  Image*/}
+                  <div className="col-lg-6 col-sm-12 order-lg-2 order-sm-1 order-1 text-center">
                     <Image
                       src={item.src}
                       width={550}
@@ -77,7 +79,7 @@ const walks = () => {
                 </div>
               ) : (
                 <div className="row">
-                  <div className="col-lg-6 col-sm-12 ">
+                  <div className="col-lg-6 col-sm-12 text-center">
                     <Image
                       src={item.src}
                       width={550}
