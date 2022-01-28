@@ -62,24 +62,27 @@ function Navbar() {
       >
         <div className="navbar-nav align-items-center">
           <Link href="/" as="/">
-            <a className="nav-item nav-link active" href="/">
+            <a
+              className={`${styles.navLink} nav-item nav-link active`}
+              href="/"
+            >
               Home
             </a>
           </Link>
 
           <Link href="/walks">
-            <a className="nav-item nav-link">Walks</a>
+            <a className={`nav-item nav-link ${styles.navLink}`}>Walks</a>
           </Link>
 
           <Link href="/aboutUs">
-            <a className="nav-item nav-link">About us</a>
+            <a className={`nav-item nav-link ${styles.navLink}`}>About us</a>
           </Link>
           <Link href="/team">
-            <a className="nav-item nav-link">Team</a>
+            <a className={`nav-item nav-link ${styles.navLink}`}>Team</a>
           </Link>
 
           <Link href="/contact">
-            <a className="nav-item nav-link">Contact us</a>
+            <a className={`nav-item nav-link ${styles.navLink}`}>Contact us</a>
           </Link>
         </div>
       </div>

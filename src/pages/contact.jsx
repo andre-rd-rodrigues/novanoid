@@ -13,10 +13,11 @@ import {
 function contact() {
   const handleSubmit = (e) => {
     e.preventDefault();
-    return Toast(
+    Toast(
       "success",
       "Thank you for getting in touch! We appreciate you contacting us Novawalks."
     );
+    return setTimeout(() => window.location.reload(), 3000);
   };
 
   return (
