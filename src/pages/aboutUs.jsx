@@ -69,6 +69,7 @@ function aboutUs() {
                   src="https://images.unsplash.com/photo-1522850067562-a4c60453058d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=930&q=80"
                   width={400}
                   height={550}
+                  priority
                 />
               </motion.div>
               <div className="col-lg-6 col-sm-12">

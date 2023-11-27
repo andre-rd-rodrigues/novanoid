@@ -51,6 +51,7 @@ const walks = () => {
             layout="fill"
             objectFit="cover"
             objectPosition="center"
+            priority
           />
           <motion.div
             variants={titleVariants}

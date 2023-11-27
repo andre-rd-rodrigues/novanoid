@@ -29,6 +29,7 @@ wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
           layout="fill"
           objectFit="cover"
           objectPosition="center"
+          priority
         />
         <motion.div
           variants={titleVariants}
